@@ -213,6 +213,9 @@ table, tr, td {
   position: relative;
   
 }
+.main__texto--amarillo{
+  color: #F0B92E;
+}
 
 .main__h2{
   width: 100%;
@@ -287,7 +290,8 @@ table, tr, td {
 
       .main__container--resenia{
        background-color: #CE1B18;
-       grid-gap: 20px
+       grid-template-columns: auto;
+       grid-gap: 10px
       }
 
       .main__resenia--h2{
@@ -300,7 +304,7 @@ table, tr, td {
       
       .main__imagen--resenia{
         max-width: 100%;
-        width: 12.5em;
+        width: 32.5em;
       }
       .main__p{
         color: #fff;
@@ -357,7 +361,7 @@ table, tr, td {
   /*VIDEO*/
 .section__video{
   width: 100%;
-  background-color: aqua;
+  background-color: var(--color-principal);
   position: relative;
   top: 15vh;
 }
@@ -401,22 +405,31 @@ footer{
   justify-content: space-between;
   align-items: center;  
 }
+.footer__li{
+  padding-top: 2.3rem;
+  color:rgba(250,187,47,1);
+  font-weight: 800;
+}
 
 .footer__svg{
-  width: 50%;
+  width: 40%;
   display: block;
   fill: orange;
   stroke: #ef3f01; 
 }
 .footer__textos{
-  width: 50%;
+  width: 100%;
+  color:rgba(250,187,47,1);
+  font-weight: 800;
+  text-align: center;
 }
 
 .footer__redes--instagram, .footer__redes--facebook, .footer__redes--tiktok{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin-top: 0.7rem;
 }
 .footer__contacto{
   width: 100%;
@@ -553,7 +566,7 @@ footer{
      }
      .main__img--vegeta{
       width: 150px;
-      left: 75px;
+      left: 7rem;
      }
     .main__container--texto{
       height: 50%;
@@ -574,7 +587,7 @@ footer{
     .main__container--resenia{
        /*USO DE GRID*/
        display: grid;
-       grid-template-columns: 2fr 3fr;
+       grid-template-columns: 2fr 4fr;
        padding: 45px;
        margin-bottom: 0.3125rem;
        border: 2px solid wheat;
@@ -584,11 +597,20 @@ footer{
       
     }
     .main__imagen--resenia{
-      max-width: 70%;
-      width: auto;
+      max-width: 100%;
       margin: auto;
       margin-bottom: 0.8rem;
 
+    }
+    .main__texto--amarillo{
+      color: #F0B92E;
+    }
+    .main__p{
+      width: 100%;
+      padding-top: 6px;
+      line-height: 1.2rem;
+      color: #fff;
+      text-shadow: 2px 2px 10px #0B0700;
     }
   
       /*CONTACTOS*/
@@ -603,9 +625,7 @@ footer{
         margin-left: auto;
         margin-right: auto;
       }
-      .footer__h2--redes{
-        padding-top: 1.5rem;
-      }
+      
       .footer__svg{
         margin-bottom: 1.5rem;
       }
