@@ -14,7 +14,7 @@ Este entrega del preproyecto tiene como objetivo crear una página web dedicada 
 
 ### Tecnologías Utilizadas
 
-* **HTML:** Estructura básica de la página solicitada por la rubrica recibidad.
+* **HTML:** Estructura básica de la página solicitada por la rubrica recibida.
 * **CSS:** Estilos visuales para dar vida a la página, replicando la estética de Dragon Ball Z.
 * **JavaScript:** Interactividad, utilizando un componente denominado menu hamburguesa.
 
@@ -23,7 +23,7 @@ Este entrega del preproyecto tiene como objetivo crear una página web dedicada 
 * **index.html:** Página principal de la web.
 * **app.css:** Hoja de estilos para definir el aspecto visual.
 * **app.js:** Archivo JavaScript para la lógica y la interactividad.
-* **assets:** Carpeta para almacenar imágenes y otros recursos.
+* **img:** Carpeta para almacenar imágenes y otros recursos.
 * **video:** Carpeta para almacenar videos.
 
 ### Contribuciones
