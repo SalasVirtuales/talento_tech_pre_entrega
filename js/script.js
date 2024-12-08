@@ -1,4 +1,4 @@
-//Esta Parte se realizo a modo de prueba
+/*Esta Parte se realizo a modo de prueba
 const btnEnviar= document.getElementById("enviar")
 btnEnviar.addEventListener('click',verificarFormulario);
 
@@ -30,4 +30,24 @@ function imprimirConsola(dato){
     {
     console.log("Campos del formulario completados correctamente")
     }
-}
+}*/
+
+//funcionalidad 2
+const productos = 
+[
+    { nombre: "Esfera del Dragon", precio: 1500 },
+     { nombre: "Arroz", precio: 2500 },
+     { nombre: "dragon", precio: 800 },
+     { nombre: "nube", precio: 100 },
+     { nombre: "kit", precio: 50 } 
+];
+
+function mostrarProductos(productos) 
+{ 
+    for (let i = 0; i < productos.length; i++)
+        { 
+            console.log(`Articulo: ${productos[i].nombre}, Precio: $${productos[i].precio}`); 
+        } 
+    }
+
+mostrarProductos(productos)
