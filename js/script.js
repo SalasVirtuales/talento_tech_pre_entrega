@@ -1,4 +1,4 @@
-/*Esta Parte se realizo a modo de prueba
+//Esta Parte se realizo a modo de prueba
 const btnEnviar= document.getElementById("enviar")
 btnEnviar.addEventListener('click',verificarFormulario);
 
@@ -31,10 +31,10 @@ function imprimirConsola(dato){
     console.log("Campos del formulario completados correctamente")
     }
 }
-*/
 
 
-/*funcionalidad 2
+
+//funcionalidad 2
 const productos = 
 [
     { nombre: "Esfera del Dragon", precio: 1500 },
@@ -53,7 +53,7 @@ function mostrarProductos(productos)
     }
 
 mostrarProductos(productos)
-*/
+
 
 //funcionalidad 3
 // Array de productos Dragon Ball
