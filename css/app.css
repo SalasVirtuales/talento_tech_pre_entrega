@@ -39,6 +39,9 @@ section.baner.container-fluid{
     --bs-gutter-x: -1.5rem;
 }
 
+.modal-body {
+    background: crimson;
+}
 h2.cards__h2{
      text-shadow: 1px 1px 5px black;
 }

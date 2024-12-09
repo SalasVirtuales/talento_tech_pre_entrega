@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Productos DBZ</title>
+    <style>
+        .producto {
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul id="listaProductos"></ul>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="descripcionProducto"></div>
+        </div>
+    </div>
+
+    <script>
+        // Array de productos disponibles
+        const productosDBZ = [
+            { nombre: "Figura de Goku", precio: 1500, descripcion: "Figura de acción de Goku en su forma Super Saiyan." },
+            { nombre: "Figura de Vegeta", precio: 1400, descripcion: "Figura de acción de Vegeta en su forma Super Saiyan Blue." },
+            { nombre: "Figura de Piccolo", precio: 2000, descripcion: "Figura de acción de Piccolo en su forma Super Saiyan Blue." },
+            { nombre: "Figura de Bulma", precio: 500, descripcion: "Figura de acción de Piccolo en su forma Super Saiyan Blue." }
+        ];
+
+        // Función para mostrar la lista de productos en la página
+        const mostrarListaDeProductos = (productos) => {
+            const listaProductos = document.getElementById('listaProductos');
+
+            productos.forEach((producto, index) => {
+                const item = document.createElement('li');
+                item.textContent = `${producto.nombre} - $${producto.precio}`;
+                item.className = 'producto';
+                item.setAttribute('data-index', index);
+                listaProductos.appendChild(item);
+            });
+        };
+
+        // Función para mostrar la descripción ampliada del producto
+        const mostrarDescripcionProducto = (index) => {
+            const descripcionProducto = document.getElementById('descripcionProducto');
+            const producto = productosDBZ[index];
+            descripcionProducto.innerHTML = `<h3>${producto.nombre}</h3><p>${producto.descripcion}</p>`;
+            modal.style.display = "block";
+        };
+
+        // Obtener el modal y el botón de cerrar
+        const modal = document.getElementById("myModal");
+        const span = document.getElementsByClassName("close")[0];
+
+        // Cerrar el modal al hacer clic en el botón de cerrar
+        span.onclick = () => {
+            modal.style.display = "none";
+        };
+
+        // Cerrar el modal al hacer clic fuera de él
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        // Agregar evento de clic a cada producto en la lista
+        document.addEventListener('click', (event) => {
+            if (event.target && event.target.matches('.btn')) {
+                const index = event.target.getAttribute('data-index');
+                mostrarDescripcionProducto(index);
+            }
+        });
+
+        // Inicializar la lista de productos
+        mostrarListaDeProductos(productosDBZ);
+    </script>
+</body>
+</html>
