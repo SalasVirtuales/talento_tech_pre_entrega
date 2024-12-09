@@ -78,32 +78,46 @@
       
       <!--Articulos-->
     </section>
-    <main class="main container-fluid">
+      <main class="main container-fluid">
       <section class="cards__articulo row">
         <div class="cards__card col-12 bg-primary ">
           <h2 id="articulos" class="cards__h2 py-3">Articulos</h2>
         </div>
+    
+      <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false " tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="descripcionProducto" class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
         <!--Grupo_Tarjeta-->
         <div class="cards__card  row">
+
 
           <!--Tarjeta 1-->
           <div class="card--1 col-12 col-sm-6 col-lg-3">
             
             <div class="row">
-              <img src="https://dragonball-api.com/characters/goku_normal.webp" class="card-img-top col-6 col-sm-12" alt="">
+              <img src="https://dragonball-api.com/characters/goku_normal.webp" height="300px" class="card-img-top col-6 col-sm-12" alt="">
 
               <div class="card-body col-6 col-sm-12">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                
-                <ul class=" list-group-flush">
-                  <li class="">An item</li>
-                  <li class="">A second item</li>
-                  <li class="">A third item</li>
-                </ul>
+                  <h5 class="card-title">Figura Goku</h5>
+                  <p class="card-text">Goku, un Saiyajin, con corazón puro y deseo constante de superarse y proteger.</p>
                 <div class="card-body">
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
+                  <a href="#" type="button" class="btn btn-warning" data-index="0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">descripcion</a>
                 </div>
               </div>
             </div>
@@ -113,20 +127,14 @@
            <div class="card--1 col-12 col-sm-6 col-lg-3">
             
             <div class="row">
-              <img src="https://dragonball-api.com/characters/goku_normal.webp" class="card-img-top col-6 col-sm-12" alt="">
+              <img src="https://dragonball-api.com/characters/vegeta_normal.webp" height="300px"class="card-img-top col-6 col-sm-12" alt="">
 
               <div class="card-body col-6 col-sm-12">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h5 class="card-title">Figura Vegeta</h5>
+                  <p class="card-text">Vegeta, orgulloso príncipe Saiyajin, busca superar a Goku con determinación feroz.</p>
                 
-                <ul class=" list-group-flush">
-                  <li class="">An item</li>
-                  <li class="">A second item</li>
-                  <li class="">A third item</li>
-                </ul>
                 <div class="card-body">
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
+                  <a href="#" type="button" class="btn btn-warning" data-index="1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">descripcion</a>
                 </div>
               </div>
             </div>
@@ -136,20 +144,13 @@
            <div class="card--1 col-12 col-sm-6 col-lg-3">
             
             <div class="row">
-              <img src="https://dragonball-api.com/characters/goku_normal.webp" class="card-img-top col-6 col-sm-12" alt="">
+              <img src="https://dragonball-api.com/characters/picolo_normal.webp" height="300px" class="card-img-top col-6 col-sm-12" alt="">
 
               <div class="card-body col-6 col-sm-12">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                
-                <ul class=" list-group-flush">
-                  <li class="">An item</li>
-                  <li class="">A second item</li>
-                  <li class="">A third item</li>
-                </ul>
-                <div class="card-body">
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
+                  <h5 class="card-title">Figura Piccolo</h5>
+                  <p class="card-text">Piccolo, guerrero Namekiano, protector sabio con gran poder y mentor de Gohan.</p>
+               <div class="card-body">
+                <a href="#" type="button" class="btn btn-warning" data-index="2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">descripcion</a>
                 </div>
               </div>
             </div>
@@ -159,20 +160,13 @@
            <div class="card--1 col-12 col-sm-6 col-lg-3">
             
             <div class="row">
-              <img src="https://dragonball-api.com/characters/goku_normal.webp" class="card-img-top col-6 col-sm-12" alt="">
+              <img src="https://dragonball-api.com/characters/bulma.webp" height="300px" class="card-img-top col-6 col-sm-12" alt="">
 
               <div class="card-body col-6 col-sm-12">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                
-                <ul class=" list-group-flush">
-                  <li class="">An item</li>
-                  <li class="">A second item</li>
-                  <li class="">A third item</li>
-                </ul>
-                <div class="card-body">
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
+                  <h5 class="card-title">Figura Bulma</h5>
+                  <p class="card-text">Bulma, científica brillante e ingeniosa, inventora de tecnología avanzada y aliada clave de Goku.</p>
+                  <div class="card-body">
+                    <a href="#" type="button" class="btn btn-warning" data-index="3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">descripcion</a>
                 </div>
               </div>
             </div>

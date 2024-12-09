@@ -30,9 +30,11 @@ function imprimirConsola(dato){
     {
     console.log("Campos del formulario completados correctamente")
     }
-}*/
+}
+*/
 
-//funcionalidad 2
+
+/*funcionalidad 2
 const productos = 
 [
     { nombre: "Esfera del Dragon", precio: 1500 },
@@ -51,3 +53,30 @@ function mostrarProductos(productos)
     }
 
 mostrarProductos(productos)
+*/
+
+//funcionalidad 3
+// Array de productos Dragon Ball
+const productosDBZ = [
+    { nombre: "Figura de Goku", precio: 15000, descripcion: "Figura de acción de Goku en su forma Super Saiyan." },
+    { nombre: "Figura de Vegeta", precio: 14000, descripcion: "Figura de acción de Vegeta en su forma Super Saiyan Blue." },
+    { nombre: "Figura de Piccolo", precio: 20000, descripcion: "Figura de acción de Piccolo en su forma Super Saiyan Blue." },
+    { nombre: "Figura de Bulma", precio: 25000, descripcion: "Figura de acción de Piccolo en su forma Super Saiyan Blue." }
+];
+
+// Función para mostrar la descripción amplidad del producto
+const mostrarDescripcion = (index) => {
+    const descripcionProducto = document.getElementById('descripcionProducto');
+    const producto = productosDBZ[index];
+    descripcionProducto.innerHTML = `<h3>${producto.nombre}</h3>
+    <p>${producto.descripcion}</p>
+    <p> $ ${producto.precio}</p>`;
+};
+
+ // Agregar evento de clic a cada producto en la lista
+ document.addEventListener('click', (event) => {
+    if (event.target && event.target.matches('.btn')) {
+        const index = event.target.getAttribute('data-index');
+        mostrarDescripcion(index);
+    }
+});
