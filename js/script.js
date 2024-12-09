@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /**
  * Implementar una función que verifique si todos los
  * campos del formulario de contacto están
@@ -8,7 +6,6 @@
 
 
 //funcionalidad 
->>>>>>> funcionalidadJs
 //Esta Parte se realizo a modo de prueba
 const btnEnviar= document.getElementById("enviar")
 btnEnviar.addEventListener('click',verificarFormulario);
@@ -44,17 +41,12 @@ function imprimirConsola(dato){
 
 /************************************************* */
 
-<<<<<<< HEAD
-
-//funcionalidad 2
-=======
 //funcionalidad
 /**
  * Crear un ciclo que genere dinámicamente una
  * lista de productos disponibles y los muestre 
  * en la consola
  */
->>>>>>> funcionalidadJs
 const productos = 
 [
     { nombre: "Esfera del Dragon", precio: 1500 },
@@ -73,10 +65,6 @@ function mostrarProductos(productos)
     }
 
 mostrarProductos(productos)
-<<<<<<< HEAD
-
-=======
->>>>>>> funcionalidadJs
 
 /*************************************************/
 //funcionalidad 
@@ -138,9 +126,6 @@ const mostrarDescripcion = (index) => {
      tableBody.appendChild(row);
  });
 
-
-// Llamar a la función para mostrar los productos al cargar la página
-window.onload = mostrarProductosEnTabla;
 
 /*************************************************/
 
