@@ -78,6 +78,10 @@ label.form-label {
     body{
         background-color: blueviolet;
     }
+    a.btn.btn-warning {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
 
 }
 
