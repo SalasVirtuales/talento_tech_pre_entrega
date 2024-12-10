@@ -88,7 +88,7 @@ const productosDBZ = [
 
 // Función para mostrar la descripción amplidad del producto
 const mostrarDescripcion = (index) => {
-    const descripcionProducto = document.getElementById('descripcionProducto');
+    const descripcionProducto = document.getElementById('descripcionProductos');
     const producto = productosDBZ[index];
     descripcionProducto.innerHTML = `<h3>${producto.nombre}</h3>
     <p>${producto.descripcion}</p>
@@ -127,12 +127,63 @@ const mostrarDescripcion = (index) => {
  });
 
 
-// Llamar a la función para mostrar los productos al cargar la página
-window.onload = mostrarProductosEnTabla;
-
 /*************************************************/
 
 //funcionalidad
 /**
- * 
+ * Utilización de fetch para obtener datos de una API
+ * pública y mostrarlos en la sección main del HTML.
+ * Procesar los datos obtenidos de la API para
+ * organizarlos en cards, aplicando Flexbox o Grid para
+ * mantener la coherencia en el diseño.
  */
+  fetch('https://dragonball-api.com/api/characters?limit=12')
+  .then((response) => response.json())
+  .then((data) => {
+  
+  const productosContainer = document.getElementById("productos-container");
+  
+  data.items.forEach((productos) => {
+  
+  productosContainer.innerHTML += `
+  
+   <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false " tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">${productos.name}</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="descripcionProducto" class="modal-body">
+            ${productos.description}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!--Tarjeta-->
+  <div class="card--1 col-12 col-sm-6 col-lg-3">
+   
+              <div class="row">
+                <img src="${productos.image}" height="300px" class="card-img-top col-6 col-sm-12" alt="">
+  
+                <div class="card-body col-6 col-sm-12">
+                    <h5 class="card-title">Figura ${productos.name}</h5>
+                    <p class="card-text">Articulo ${productos.id}.</p>
+                    <p class="card-text">Precio $${productos.id*10000-productos.id*200}.</p>
+                    <p class="card-text">Stock ${productos.ki}.</p>
+                  <div class="card-body">
+                    <a href="#" type="button" class="btn btn-warning" data-index="${productos.id}" data-bs-toggle="modal" data-bs-target="#staticBackdrop">descripcion</a>
+                  </div>
+                </div>
+              </div>
+           </div>
+   </div>`;
+  });
+  })
+  .catch((error) => console.error("Error al obtener productos:", error));
