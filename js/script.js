@@ -137,14 +137,14 @@ const mostrarDescripcion = (index) => {
  * organizarlos en cards, aplicando Flexbox o Grid para
  * mantener la coherencia en el diseño.
  */
+
+
   fetch('https://dragonball-api.com/api/characters?limit=12')
   .then((response) => response.json())
   .then((data) => {
   
   const productosContainer = document.getElementById("productos-container");
-  
   data.items.forEach((productos) => {
-  
   productosContainer.innerHTML += `
   
    <!-- Modal -->
@@ -152,15 +152,17 @@ const mostrarDescripcion = (index) => {
       <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">${productos.name}</h1>
+            <h1 class="modal-title fs-5 text-dark fs-xxl" id="staticBackdropLabel">
+
+            </h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div id="descripcionProducto" class="modal-body">
-            ${productos.description}
+            
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Comprar</button>
+            <button type="button" class="btn btn-primary">Agregar Carrito</button>
           </div>
         </div>
       </div>
@@ -168,22 +170,42 @@ const mostrarDescripcion = (index) => {
   
     <!--Tarjeta-->
   <div class="card--1 col-12 col-sm-6 col-lg-3">
-   
               <div class="row">
-                <img src="${productos.image}" height="300px" class="card-img-top col-6 col-sm-12" alt="">
-  
-                <div class="card-body col-6 col-sm-12">
-                    <h5 class="card-title">Figura ${productos.name}</h5>
-                    <p class="card-text">Articulo ${productos.id}.</p>
-                    <p class="card-text">Precio $${productos.id*10000-productos.id*200}.</p>
-                    <p class="card-text">Stock ${productos.ki}.</p>
-                  <div class="card-body">
-                    <a href="#" type="button" class="btn btn-warning" data-index="${productos.id}" data-bs-toggle="modal" data-bs-target="#staticBackdrop">descripcion</a>
+                    <img src="${productos.image}" height="300px" class="card-img-top col-6 col-sm-12" alt="">
+      
+                    <div class="card-body col-6 col-sm-12">
+                        <h5 class="card-title">Figura ${productos.name}</h5>
+                        <p class="card-text">Articulo ${productos.id}.</p>
+                        <p class="card-text">Precio $${productos.id*10000-productos.id*200}.</p>
+                        <p class="card-text">Stock ${productos.ki}.</p>
+                    <div class="card-body">
+                        <a href="#" type="button" class="btn btn-warning" data-index="${productos.id}" data-bs-toggle="modal" data-bs-target="#staticBackdrop">descripcion</a>
+                    </div>
+                    </div>
                   </div>
-                </div>
-              </div>
            </div>
    </div>`;
   });
+  // Agregar evento de clic a los botones  descripción
+  document.querySelectorAll('.btn-warning').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const index = event.target.getAttribute('data-index');
+        mostrarDescripcion2(data.items[index-1]);
+    });
+});
   })
   .catch((error) => console.error("Error al obtener productos:", error));
+
+  // Función para mostrar la descripción del personaje en el modal
+  const mostrarDescripcion2 = (character) => {
+    console.log(character)
+    const modalBody = document.getElementById('descripcionProducto');
+    const modalTitle = document.getElementById('staticBackdropLabel');
+
+    modalTitle.textContent = character.name;
+    modalBody.innerHTML = `
+        <p>${character.description || 'Descripción no disponible'}</p>
+
+    `;
+};
+/***********************************************************/
