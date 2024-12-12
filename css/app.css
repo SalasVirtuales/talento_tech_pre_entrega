@@ -23,6 +23,28 @@ body{
     color:#CE1B18;
   }
 
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    color: aliceblue;
+    flex-direction: row;
+    background-color: initial;
+    margin: 10px;
+    width: 300px;
+}
+.card img {
+  max-height: 300px;
+}
+.cart-icon {
+    font-size: 18px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
 button.navbar-toggler{
     color: antiquewhite;
     background-color: aliceblue;
@@ -117,5 +139,11 @@ label.form-label {
     label.form-label {
         color: orangered;
     }
+    .cart-icon {
+        font-size: 25px;
+         cursor: pointer;
+         margin-top: 1.5rem;
+     }
+     
  
 }
